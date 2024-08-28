@@ -44,11 +44,15 @@ class HomeSearchBar extends StatelessWidget {
               children: [
                 Text(
                   'Search on Gismo',
-                  style: Theme.of(context).textTheme.labelMedium,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 Text(
                   'Electronics . Shoes . Anything',
-                  style: Theme.of(context).textTheme.labelSmall,
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .onPrimary
+                          .withOpacity(0.5)),
                 ),
               ],
             )

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class NewBadge extends StatelessWidget {
   const NewBadge({
     super.key,
+    required this.title,
   });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class NewBadge extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'New',
+          title,
           style: Theme.of(context).textTheme.labelSmall!.copyWith(
                 color: Theme.of(context).colorScheme.surface,
               ),

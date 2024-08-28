@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multivendor_test/core/value_notifiers.dart';
 import 'package:multivendor_test/features/category/domain/entities/category_entity.dart';
+import 'package:multivendor_test/features/category/presentation/widgets/category_horizontal_list_item.dart';
 
 class CategoryHorizontalList extends StatelessWidget {
   const CategoryHorizontalList({required this.categories, super.key});
@@ -16,32 +17,13 @@ class CategoryHorizontalList extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
           itemBuilder: (context, index) {
-            return ValueListenableBuilder(
-                valueListenable: selectedCategory,
-                builder: (context, value, widget) {
-                  return GestureDetector(
-                    onTap: () {
-                      selectedCategory.value = index;
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      margin: const EdgeInsets.only(left: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: selectedCategory.value == index
-                            ? Theme.of(context).colorScheme.primary
-                            : Theme.of(context).colorScheme.surfaceContainer,
-                      ),
-                      child: InkWell(
-                        child: Center(
-                          child: Text(categories[index].name),
-                        ),
-                      ),
-                    ),
-                  );
-                });
+            return CategoryHorizontalListItem(
+              category: categories[index],
+              index: index,
+              onTap: () => selectedCategory.value = index,
+            );
           }),
     );
   }
 }
+

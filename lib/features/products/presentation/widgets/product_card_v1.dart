@@ -8,9 +8,11 @@ class ProductCardV1 extends StatelessWidget {
   const ProductCardV1({
     super.key,
     required this.product,
+    required this.badgeTitle,
   });
 
   final ProductEntity product;
+  final String badgeTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,11 @@ class ProductCardV1 extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          product.isNew ? const NewBadge() : const SizedBox(),
+          product.isNew
+              ? NewBadge(
+                  title: badgeTitle,
+                )
+              : const SizedBox(),
           RatingWidget(rating: product.rating.toString()),
         ],
       ),
@@ -82,7 +88,7 @@ class ProductCardV1 extends StatelessWidget {
           ).padding(bottom: 5),
           Text(
             product.price,
-            style: Theme.of(context).textTheme.labelLarge!.copyWith(
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
           ),

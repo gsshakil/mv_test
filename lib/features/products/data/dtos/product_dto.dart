@@ -8,6 +8,7 @@ class ProductDto extends ProductEntity {
     required super.rating,
     required super.isNew,
     required super.reviewCount,
+    required super.category,
     required super.colors,
     required super.imagePath,
   });

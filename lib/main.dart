@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multivendor_test/core/di.dart';
 import 'package:multivendor_test/core/theme/app_theme_data.dart';
-import 'package:multivendor_test/features/landing/presentation/screens/home_screen.dart';
 import 'package:multivendor_test/features/landing/presentation/screens/landing_screen.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

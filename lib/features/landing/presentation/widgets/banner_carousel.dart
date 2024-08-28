@@ -109,7 +109,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
               ).padding(bottom: 8),
               Text(
                 item.subTitle,
-                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
                       color: Theme.of(context).colorScheme.surface,
                     ),
               ).padding(bottom: 15),
@@ -127,7 +127,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
             child: Center(
               child: Text(
                 item.buttonText,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
             ),
           ),

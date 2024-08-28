@@ -7,6 +7,7 @@ class ProductEntity extends Equatable {
   final String price;
   final double rating;
   final String imagePath;
+  final String category;
   final bool isNew;
   final int reviewCount;
   final List<Color> colors;
@@ -17,11 +18,12 @@ class ProductEntity extends Equatable {
     required this.price,
     required this.rating,
     required this.imagePath,
+    required this.category,
     required this.isNew,
     required this.reviewCount,
     required this.colors,
   });
 
   @override
-  List<Object?> get props => [id, name, price, rating, isNew];
+  List<Object?> get props => [id, name, price, category, rating, isNew];
 }
